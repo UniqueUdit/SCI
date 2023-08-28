@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Carbon Intensity Calculator</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+    <header>
+        <h1>Software Carbon Intensity Calculator</h1>
+    </header>
+    <main>
+        <section class="calculator">
+            <h2>Calculate SCI Impact</h2>
+            <form id="sci-form">
+                <label for="users">Number of Users:</label>
+                <input type="number" id="users" name="users" required>
+
+                <label for="power">Server Power Consumption (Watts):</label>
+                <input type="number" id="power" name="power" required>
+
+                <label for="location">Data Center Location:</label>
+                <select id="location" name="location" required>
+                    <option value="us">United States</option>
+                    <option value="eu">Europe</option>
+                    <option value="asia">Asia</option>
+                </select>
+                <label for="page-size">Page Size (MB):</label>
+                <input type="number" id="page-size" name="page-size" required step="0.01">
+
+                <label for="requests">Number of Requests:</label>
+                <input type="number" id="requests" name="requests" required step="1">
+
+                <label for="server-efficiency">Server Energy Efficiency (kWh/MB):</label>
+                <input type="number" id="server-efficiency" name="server-efficiency" required step="0.01">
+
+                <label for="device-type">Device Type:</label>
+                <select id="device-type" name="device-type" required>
+                     <option value="desktop">Desktop</option>
+                     <option value="mobile">Mobile</option>
+                </select>
+
+                <label for="device-consumption">Device Energy Consumption (kWh/MB):</label>
+                <input type="number" id="device-consumption" name="device-consumption" required step="0.01">
+
+                <label for="load-time">Page Load Time (seconds):</label>
+                <input type="number" id="load-time" name="load-time" required step="0.01">
+
+                <label for="carbon-intensity">Carbon Intensity of Energy Source (gCO2/kWh):</label>
+                <input type="number" id="carbon-intensity" name="carbon-intensity" required step="0.01">
+
+                <button type="submit">Calculate SCI</button>
+            </form>
+        </section>
+
+        <section class="result">
+            <h2>SCI Impact Result</h2>
+            <div id="result-container">
+                <p id="sci-result">SCI Impact: <span id="result-value">---</span></p>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script> 
+</body>
+</html>
